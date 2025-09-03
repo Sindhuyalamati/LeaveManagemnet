@@ -1157,6 +1157,18 @@ class LeaveManagementDashboard {
         return out;
     }
 
+    createHtmlEmailContent(content) {
+        const safe = (content || '').toString()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        const html = safe
+            .replace(/\r\n/g, '\n')
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+        return `<div style="font-family: Arial, sans-serif; color:#333; line-height:1.6;"><p>${html}</p></div>`;
+    }
+
     simulateEmailSending(recipient, subject, content) {
         // Simulate email sending process
         console.log('Sending email...');
