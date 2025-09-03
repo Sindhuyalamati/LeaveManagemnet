@@ -1,0 +1,844 @@
+/* Global Styles */
+body {
+    background-color: #e3f2fd; /* Light blue background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: margin-left 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .btn-primary {
+    background-color: #243D90; /* Navy blue for All Candidates button */
+    border-color: #243D90;
+    font-weight: 500;
+}
+
+.header .btn-primary:hover {
+    background-color: #1e3375;
+    border-color: #1e3375;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-input {
+    padding-right: 40px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+/* Notification Icons */
+.notification-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.notification-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.notification-item:hover {
+    background-color: #e0e0e0;
+}
+
+.notification-item i {
+    font-size: 18px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f44336; /* Red badge */
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+    padding: 0 20px;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.page-title i {
+    color: #333;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+    display: flex;
+    gap: 26px; /* further increased space between tabs */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-tabs .btn {
+    padding: 14px 36px; /* even larger pill */
+    border-radius: 14px; /* pillier corners */
+    font-weight: 700; /* bolder */
+    font-size: 1rem; /* slightly larger text */
+    border: none;
+    min-width: 170px; /* wider min width */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10); /* deeper shadow */
+}
+
+.nav-tabs .btn-warning {
+    background-color: #ffc107; /* Yellow for active Leave Settings */
+    color: #333;
+}
+
+.nav-tabs .btn-warning:hover,
+.nav-tabs .btn-warning.active {
+    background-color: #ffb300;
+    color: #333;
+    box-shadow: 0 6px 14px rgba(255, 193, 7, 0.35);
+}
+
+.nav-tabs .btn-primary {
+    background-color: #243D90; /* Navy blue for other tabs */
+    color: white;
+}
+
+.nav-tabs .btn-primary:hover {
+    background-color: #1e3375;
+    box-shadow: 0 6px 14px rgba(36, 61, 144, 0.35);
+}
+
+/* Content Panels */
+.content-panel {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: fit-content;
+    min-height: 600px;
+}
+
+.panel-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #f0f8ff; /* Light blue background for input boxes */
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25);
+    background-color: white; /* White background when focused */
+}
+
+.form-control::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+/* Ensure consistent spacing and alignment */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    height: 45px;
+}
+
+/* Side-by-side form layout */
+.row .form-group {
+    margin-bottom: 20px;
+}
+
+.row .col-md-6:first-child .form-group {
+    margin-right: 10px;
+}
+
+.row .col-md-6:last-child .form-group {
+    margin-left: 10px;
+}
+
+/* Textarea specific styling */
+textarea.form-control {
+    height: auto;
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Form validation styling */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+/* Success state */
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Create Button */
+.btn-success {
+    background-color: #4caf50; /* Green create button */
+    border-color: #4caf50;
+    padding: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* Table Styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background-color: #e3f2fd; /* Light blue header background */
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #333;
+    padding: 12px 8px;
+}
+
+.table td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    color: #333;
+}
+
+/* Alternating row colors */
+.table tbody tr:nth-child(odd) {
+    background-color: #f0f8ff; /* Light blue for odd rows */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #e6f3ff; /* Slightly darker light blue for even rows */
+}
+
+.table tbody tr:hover {
+    background-color: #d4edda; /* Hover effect with light green */
+}
+
+/* Actions Dropdown */
+.btn-primary.btn-sm {
+    background-color: #243D90;
+    border-color: #243D90;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.btn-primary.btn-sm:hover {
+    background-color: #1e3375;
+    border-color: #1e3375;
+}
+
+.btn-primary.btn-sm i {
+    color: white;
+}
+
+/* Remove any Bootstrap default dropdown icons */
+.btn-primary.btn-sm::after {
+    display: none !important;
+}
+
+/* Three Dots Button */
+.btn-link {
+    text-decoration: none;
+    padding: 5px;
+}
+
+.btn-link:hover {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .nav-tabs .btn {
+        min-width: 100px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .content-panel {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .notification-icons {
+        gap: 15px;
+    }
+    
+    .notification-item {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #0a163e; /* Dark blue background */
+    color: white;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo i {
+    font-size: 24px;
+    color: white;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #ffc107; /* Yellow background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar i {
+    font-size: 24px;
+    color: #333;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.user-role {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+}
+
+.nav-section {
+    margin-bottom: 30px;
+}
+
+.nav-heading {
+    padding: 0 20px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.nav-item.active {
+    background-color: #ffc107; /* Yellow background for active item */
+    color: #333;
+}
+
+.nav-item.active i {
+    color: #333;
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item span {
+    flex: 1;
+}
+
+.badge {
+    /* background-color: #f44336; Red badge */
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    /* border-radius: 10px; */
+    font-weight: bold;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: auto;
+}
+
+.logout-btn {
+    width: 100%;
+    background-color: #f44336; /* Red logout button */
+    border-color: #f44336;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+}
+
+.logout-btn i {
+    font-size: 16px;
+}
+
+/* Left space gap for dashboard */
+.main-content {
+    margin-left: 0; /* No left margin to match the image */
+    transition: margin-left 0.3s ease;
+}
+
+/* Adjust main content when sidebar is open */
+.sidebar.active + .main-content {
+    margin-left: 300px;
+}
+
+/* Ensure header stays above sidebar */
+.header {
+    z-index: 1001;
+}
+
+/* Ensure proper spacing between elements */
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+    border-radius: 6px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+/* Zebra striping */
+.table tbody tr:nth-child(odd) > * {
+    background-color: #ffffff; /* light blue */
+  }
+  
+  .table tbody tr:nth-child(even) > * {
+    background-color: #e6f3ff; /* slightly darker light blue */
+  }
+
+/* Messages Interface Styles */
+.messages-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.messages-tabs .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    border: none;
+    min-width: 120px;
+}
+
+.messages-tabs .btn-warning {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.messages-tabs .btn-warning:hover,
+.messages-tabs .btn-warning.active {
+    background-color: #ffb300;
+    color: #333;
+}
+
+.messages-tabs .btn-primary {
+    background-color: #243D90;
+    color: white;
+}
+
+.messages-tabs .btn-primary:hover {
+    background-color: #1e3375;
+}
+
+
+
+.message-section {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+
+/* Messages List */
+.messages-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.message-item {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+.message-item:hover {
+    background-color: #f0f8ff;
+}
+
+.message-item.unread {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.message-from {
+    font-weight: 600;
+    color: #333;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #666;
+}
+
+.message-subject {
+    font-weight: 500;
+    color: #1976d2;
+    margin-bottom: 5px;
+}
+
+.message-preview {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Message Form Styles */
+#messageForm .form-group {
+    margin-bottom: 20px;
+}
+
+#messageForm .form-label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#messageForm .form-control,
+#messageForm .form-select {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #f0f8ff;
+}
+
+#messageForm .form-control:focus,
+#messageForm .form-select:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25);
+    background-color: white;
+}
+
+#messageForm textarea.form-control {
+    height: auto;
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+
+/* Responsive Design for Messages */
+@media (max-width: 768px) {
+    .messages-tabs {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .messages-tabs .btn {
+        min-width: auto;
+        width: 100%;
+    }
+    
+
+    
+    .message-item {
+        padding: 10px;
+    }
+    
+    .message-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* Additional Message Features */
+.message-meta {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+.delete-message-btn {
+    padding: 2px 6px;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.delete-message-btn:hover {
+    opacity: 1;
+}
+
+.message-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.message-item:hover {
+    background-color: #f8f9fa;
+}
+
+.message-item.unread {
+    background-color: #e3f2fd;
+    border-left: 3px solid #2196f3;
+}
+
+/* File Upload Styles */
+.file-upload-wrapper {
+    position: relative;
+}
+
+.file-info {
+    margin-top: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.file-item i {
+    color: #6c757d;
+}
+
+.file-name {
+    flex: 1;
+    font-weight: 500;
+    color: #495057;
+}
+
+.file-size {
+    color: #6c757d;
+    font-size: 12px;
+}
+
+.remove-file {
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.file-preview {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.file-preview-img {
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Message Attachments */
+.message-attachments {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+.attachment-item i {
+    color: #6c757d;
+}
+
+.attachment-name {
+    color: #495057;
+    font-weight: 500;
+}
+
+.attachment-size {
+    color: #6c757d;
+    font-size: 12px;
+}

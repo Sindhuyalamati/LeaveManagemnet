@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Bar -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <button class="btn btn-link text-dark" id="sidebarToggle">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            All Candidates
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Option 1</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" placeholder="Search...">
+                        <i class="bi bi-search search-icon"></i>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="notification-icons">
+                        <div class="notification-item">
+                            <i class="bi bi-bell-fill text-primary"></i>
+                            <span class="notification-badge">13</span>
+                        </div>
+                        <div class="notification-item">
+                            <i class="bi bi-tools text-warning"></i>
+                        </div>
+                        <div class="notification-item">
+                            <i class="bi bi-envelope-fill text-success"></i>
+                            <span class="notification-badge">13</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="bi bi-cpu-fill"></i>
+                <span>S3TS</span>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-name">Chandra Sekhar</div>
+                    <div class="user-role">Admin</div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-item active">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>Messages</span>
+                    <span class="badge">13</span>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-heading">Recruitment</div>
+                <div class="nav-item">
+                    <i class="bi bi-briefcase-fill"></i>
+                    <span>Jobs</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Candidates</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-file-text-fill"></i>
+                    <span>Resumes</span>
+                </div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-heading">Organization</div>
+                <div class="nav-item">
+                    <i class="bi bi-person-fill"></i>
+                    <span>Employee Management</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-journal-text"></i>
+                    <span>Leave Management</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-bar-chart-fill"></i>
+                    <span>Performance Management</span>
+                </div>
+                <div class="nav-item">
+                    <i class="bi bi-cash-stack"></i>
+                    <span>Payroll Management</span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <button class="btn btn-danger logout-btn">
+                <i class="bi bi-power"></i>
+                <span>Log Out</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="page-title">
+                        <i class="bi bi-journal-text me-2"></i>
+                        Leave Management
+                    </h1>
+                </div>
+            </div>
+            
+            <!-- Navigation Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="nav-tabs">
+                        <button class="btn btn-warning active">Leave Settings</button>
+                        <button class="btn btn-primary">Leave Recall</button>
+                        <button class="btn btn-primary">Leave History</button>
+                        <button class="btn btn-primary">Relief Officers</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Panels -->
+            <div class="row">
+                <!-- Left Panel: Create Leave Settings -->
+                <div class="col-md-6">
+                    <div class="content-panel">
+                        <h2 class="panel-title">Create Leave Settings</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="leavePlanName" class="form-label">Leave Plan Name</label>
+                                        <input type="text" class="form-control" id="leavePlanName" name="leavePlanName" value="Maternity">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="duration" class="form-label">Duration (days)</label>
+                                        <input type="number" class="form-control" id="duration" name="duration" value="60" min="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="leaveRecall" class="form-label">Do you want to activate Leave Recall for this plan ?</label>
+                                <select class="form-select" id="leaveRecall" name="leaveRecall">
+                                    <option selected>Select option from dropdown</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="leaveBonus" class="form-label">Would you like to activate leave bonus</label>
+                                        <select class="form-select" id="leaveBonus" name="leaveBonus">
+                                            <option selected>Select option from dropdown</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bonusPercentage" class="form-label">How much percentage of leave bonus?</label>
+                                        <input type="text" class="form-control" id="bonusPercentage" name="bonusPercentage" placeholder="Percentage (%)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="leaveAllocation" class="form-label">Select Leave Allocation</label>
+                                <select class="form-select" id="leaveAllocation" name="leaveAllocation">
+                                    <option value="senior" selected>Senior Level</option>
+                                    <option value="junior">Junior Level</option>
+                                    <option value="entry">Entry Level</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recallReason" class="form-label">Reason for Recall</label>
+                                <textarea class="form-control" id="recallReason" name="recallReason" rows="3" placeholder="Enter reason for recall..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Create</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Manage Leave Settings -->
+                <div class="col-md-6">
+                    <div class="content-panel">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="panel-title mb-0">Manage Leave Settings</h2>
+                            <button class="btn btn-link text-dark">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Leave Plan</th>
+                                        <th>Duration(s)</th>
+                                        <th>Recall /Autorenew</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Maternity</td>
+                                        <td>60</td>
+                                        <td>No/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sick</td>
+                                        <td>14</td>
+                                        <td>No/Yes</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Compassionate</td>
+                                        <td>30</td>
+                                        <td>No/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exam</td>
+                                        <td>20</td>
+                                        <td>No/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paternity</td>
+                                        <td>60</td>
+                                        <td>No/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Casual</td>
+                                        <td>10</td>
+                                        <td>Yes/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exam</td>
+                                        <td>20</td>
+                                        <td>No/No</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Actions <i class="bi bi-chevron-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
