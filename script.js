@@ -1129,9 +1129,17 @@ class LeaveManagementDashboard {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
-            const data = await resp.json();
-            if (!resp.ok || !data.ok) {
-                throw new Error(data?.error || 'Failed');
+            const contentType = resp.headers.get('content-type') || '';
+            const raw = await resp.text();
+            let data = {};
+            try {
+                if (contentType.includes('application/json')) {
+                    data = JSON.parse(raw);
+                }
+            } catch (e) {}
+            if (!resp.ok || (data && data.ok === false)) {
+                const msg = (data && data.error) ? data.error : raw || 'Failed';
+                throw new Error(msg);
             }
 
             // success
