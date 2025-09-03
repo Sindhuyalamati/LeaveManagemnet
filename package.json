@@ -1,0 +1,11 @@
+{
+  "name": "leave-management-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "resend": "^2.5.0"
+  }
+}
+
+
